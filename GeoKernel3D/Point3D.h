@@ -66,12 +66,4 @@ public:
 			Z + v.Z
 		);
 	}
-
-public:
-	Point3D Transform()
-	{
-
-	}
-
-
 };
