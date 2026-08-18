@@ -131,6 +131,7 @@
     <ClCompile Include="Point3D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Line3D.h" />
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Matrix4x4.h" />
