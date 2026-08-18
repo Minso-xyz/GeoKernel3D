@@ -2,20 +2,22 @@
 #include "Point3D.h"
 #include "Vector3D.h"
 #include "Line3D.h"
+#include "Matrix4x4.h"
+#include "MathUtil.h"
 
 int main()
 {
 	// Vector3D Length
-	Vector3D v(3, 4, 0);
-	double lengthVector = v.Length();
+	Vector3D v1(3, 4, 0);
+	double lengthVector = v1.Length();
 	std::cout << lengthVector << std::endl;   // 5
 
 	// Vector3D Unit
-	Vector3D unit = v.Unit();
+	Vector3D unit = v1.Unit();
 	std::cout << "(" << unit.X << ", " << unit.Y << ", " << unit.Z << ")" << std::endl;   // (0.6, 0.8, 0.0)
 
 	// Vector3D Normalize
-	Vector3D normalized = v.Normalize();
+	Vector3D normalized = v1.Normalize();
 	std::cout << "(" << normalized.X << ", " << normalized.Y << ", " << normalized.Z << ")" << std::endl;  // Overwrite (0.6, 0.8, 0.0)
 
 	// Vector3D Dot product
@@ -47,6 +49,26 @@ int main()
 	double lengthLine = line.Length();
 	std::cout << "Length = " << lengthLine << std::endl;   // 10
 
+	// Matrix4x4 Tests
+	// Point3D Transform
+	Point3D p(1, 0, 0);
+	Matrix4x4 rotZ = Matrix4x4::CreateRotationZ(90);
+	Point3D p_RotZ = rotZ.Transform(p);
+
+	p_RotZ.X = MathUtil::SnapToZero(p_RotZ.X);
+	p_RotZ.Y = MathUtil::SnapToZero(p_RotZ.Y);
+	p_RotZ.Z = MathUtil::SnapToZero(p_RotZ.Z);
+	std::cout << "Point3D : Rotated about Z-axis = (" << p_RotZ.X << ", " << p_RotZ.Y << ", " << p_RotZ.Z << ")" << std::endl;
+
+	// Vector3D Transform
+	Vector3D v(1, 0, 0);
+	Matrix4x4 rotY = Matrix4x4::CreateRotationY(90);
+	Vector3D v_RotY = rotY.Transform(v);
+
+	v_RotY.X = MathUtil::SnapToZero(v_RotY.X);
+	v_RotY.Y = MathUtil::SnapToZero(v_RotY.Y);
+	v_RotY.Z = MathUtil::SnapToZero(v_RotY.Z);
+	std::cout << "Vector3D : Rotated about Y-axis = (" << v_RotY.X << ", " << v_RotY.Y << ", " << v_RotY.Z << ")" << std::endl;
 
 	return 0;
 }

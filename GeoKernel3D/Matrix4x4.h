@@ -1,5 +1,4 @@
 #pragma once
-#define _USE_MATH_DEFINES
 #include "Point3D.h"
 #include <cmath>
 
@@ -99,7 +98,8 @@ public:
 public:
 	static double ConvertToRadian(double angleDegree)
 	{
-		return angleDegree * M_PI / 180.0;
+		double pi = 3.14159265359;
+		return angleDegree * pi / 180.0;
 	}
 
 public:
@@ -161,6 +161,25 @@ public:
 		}
 
 		return Point3D(x / w, y / w, z / w);   // w = 1 (homogenous coordinates)
+	}
+
+public:
+	Vector3D Transform(Vector3D v)  // Transform normal (No translation)
+	{
+		double x = M11 * v.X + M12 * v.Y + M13 * v.Z;
+		double y = M21 * v.X + M22 * v.Y + M23 * v.Z;
+		double z = M31 * v.X + M32 * v.Y + M33 * v.Z;
+
+		return Vector3D(x, y, z);
+	}
+
+public:
+	Line3D Transform(Line3D line)
+	{
+		Point3D startPointTransformed = Transform(line.Start);
+		Point3D endPointTransformed = Transform(line.End);
+
+		return Line3D(startPointTransformed, endPointTransformed);
 	}
 
 public:
