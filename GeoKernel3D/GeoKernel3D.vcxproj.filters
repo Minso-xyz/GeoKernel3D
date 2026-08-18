@@ -38,5 +38,8 @@
     <ClInclude Include="Matrix4x4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MathUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
