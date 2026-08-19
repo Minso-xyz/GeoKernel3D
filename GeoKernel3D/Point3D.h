@@ -58,12 +58,32 @@ public:
 	}
 
 public:
-	Point3D operator+(Vector3D v)
+	Point3D operator +(Vector3D v)
 	{
 		return Point3D(
 			X + v.X,
 			Y + v.Y,
 			Z + v.Z
+		);
+	}
+
+public:
+	Point3D operator *(double factor)
+	{
+		return Point3D(
+			X * factor,
+			Y * factor,
+			Z * factor
+		);
+	}
+
+public:
+	Point3D operator + (Point3D other)
+	{
+		return Point3D(
+			X + other.X,
+			Y + other.Y,
+			Z + other.Z
 		);
 	}
 };

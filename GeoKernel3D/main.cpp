@@ -4,6 +4,8 @@
 #include "Line3D.h"
 #include "Matrix4x4.h"
 #include "MathUtil.h"
+#include "BezierCurve.h"
+#include <fstream>
 
 int main()
 {
@@ -69,6 +71,38 @@ int main()
 	v_RotY.Y = MathUtil::SnapToZero(v_RotY.Y);
 	v_RotY.Z = MathUtil::SnapToZero(v_RotY.Z);
 	std::cout << "Vector3D : Rotated about Y-axis = (" << v_RotY.X << ", " << v_RotY.Y << ", " << v_RotY.Z << ")" << std::endl;
+
+	// Bezier Curve
+	Point3D P0 (0, 0, 0);
+	Point3D P1(10, 0, 0);
+	Point3D P2(10, 10, 0);
+	Point3D P3(20, 10, 0);
+
+	BezierCurve curve(P0, P1, P2, P3);
+	Point3D point1 = curve.Evaluate_CubicBezier(0);
+	std::cout << "Bezier Curve::Evaluate(0) = (" << point1.X << ", " << point1.Y << ", " << point1.Z << ")" << std::endl;   // P0
+	Point3D point3 = curve.Evaluate_CubicBezier(1);
+	std::cout << "Bezier Curve::Evaluate(1) = (" << point3.X << ", " << point3.Y << ", " << point3.Z << ")" << std::endl;   // P3
+	// P1 and P1 are a control point, the curve doesn't always pass
+	Point3D pointMid = curve.Evaluate_CubicBezier(0.75);
+	std::cout << "Bezier Curve::Evaluate(0.75) = (" << pointMid.X << ", " << pointMid.Y << ", " << pointMid.Z << ")" << std::endl;   // Control point
+
+	// Bezier Curve - creating .csv file to test
+	std::ofstream file("BezierCurve.csv");
+	file << "X,Y,Z" << std::endl;
+
+	for (double t = 0.0; t <= 1.0; t += 0.01)
+	{
+		Point3D p = curve.Evaluate_CubicBezier(t);
+
+		file
+			<< p.X << ","
+			<< p.Y << ","
+			<< p.Z
+			<< std::endl;
+	}
+
+	file.close();
 
 	return 0;
 }
