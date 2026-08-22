@@ -30,16 +30,30 @@ The purpose of this project is to experiment with geometric algorithms, mathemat
 - MidPoint
 - Reverse
 - Point Projection (WIP)
+- Bezier Curve
+- B-Spline
+
+### Matrix 4x4
+- Translation
+- Rotation
+- Scale
+- Mirror
+- Transform
+
+### Viewer
+- Bounding Box
+
  
 ## Future Experiments
 - Plane
-- Matrix4x4
-- Transformations
-- Line / Plane Intersection
+- Intersections
 - Ray
-- Bounding Box
 - Mesh
 - B-Rep Concepts
+- NURBS
+- Convex Hull
+- DXF Parsing
+- DXF Writer
  
 ## Notes
 This is an experimental project.
