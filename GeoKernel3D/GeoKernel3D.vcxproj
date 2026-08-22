@@ -133,11 +133,14 @@
   <ItemGroup>
     <ClInclude Include="BezierCurve.h" />
     <ClInclude Include="BoundingBox.h" />
+    <ClInclude Include="BSplineCurve.h" />
     <ClInclude Include="Line3D.h" />
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Matrix4x4.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Point3D.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

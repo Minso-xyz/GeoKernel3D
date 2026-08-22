@@ -9,6 +9,23 @@ public:
 	Point3D Max;
 
 public:
+	BoundingBox()
+	{
+		Min = Point3D(0, 0, 0);
+		Max = Point3D(0, 0, 0);
+	}
+
+public:
+	BoundingBox(
+		Point3D min,
+		Point3D max
+	)
+	{
+		Min = min;
+		Max = max;
+	}
+
+public:
 	Point3D Center()
 	{
 		double x = (Min.X + Max.X) * 0.5;
