@@ -9,14 +9,23 @@ public:
 	Point3D Origin;
 	Vector3D Normal;
 
-public:
-	double DistanceTo(Point3D point)   // TO DO
+	Plane(Point3D origin, Vector3D normal)
 	{
-		/*double dist = Origin.DistanceTo(point);
+		Origin = origin;
+		Normal = normal.Unit();  // Normalized
+	}
 
-		Vector3D OP = point.VectorTo(Origin);
-		Vector3D OQ;*/
+public:
+	double DistanceTo(Point3D point)
+	{
+		Vector3D v = Origin.VectorTo(point);
+		return v.Dot(Normal);
+	}
 
-		return 0;
+public:
+	Point3D ProjectPoint(Point3D point)
+	{
+		double distance = DistanceTo(point);
+		return point - (Normal * distance);
 	}
 };
