@@ -6,6 +6,9 @@
 #include "MathUtil.h"
 #include "BezierCurve.h"
 #include <fstream>
+#include "BSplineCurve.h"
+#include <vector>
+#include <string>
 
 int main()
 {
@@ -103,6 +106,34 @@ int main()
 	}
 
 	file.close();
+
+	////B-Spline curve
+	//std::vector<BSplineCurve> spline;
+	//spline.controlPoints.push_back(Point3D(0, 0, 0));
+	//spline.controlPoints.push_back(Point3D(10, 0, 0));
+	//spline.controlPoints.push_back(Point3D(10, 10, 0));
+	//spline.controlPoints.push_back(Point3D(20, 10, 0));
+	//spline.controlPoints.push_back(Point3D(30, 5, 0));
+
+	BSplineCurve BSplineCurve(
+		{
+		Point3D(0,0,0),
+		Point3D(10,0,0),
+		Point3D(10,10,0),
+		Point3D(20,10,0),
+		Point3D(30,5,0)
+		},{0,0,0,0,
+		1,
+		2,
+		3,
+		3,3,3
+		}, 3);
+
+	std::cout << BSplineCurve.ControlPointCount() << std::endl;
+	std::cout << BSplineCurve.KnotCount() << std::endl;
+	std::cout << BSplineCurve.StartParameter() << std::endl;
+	std::cout << BSplineCurve.EndParameter() << std::endl;
+	std::cout << std::to_string(BSplineCurve.IsValid()) << std::endl;
 
 	return 0;
 }
