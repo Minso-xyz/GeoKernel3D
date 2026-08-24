@@ -79,7 +79,7 @@ public:
 	}
 
 public:
-	bool TryIntersection(Line3D line, Point3D intersection)
+	bool TryIntersection(Line3D line, Point3D& intersection)
 	{
 		double startDistance = DistanceTo(line.Start);   // Calculate how far the start point of the line is from the plane
 		double normalMovement = line.Direction().Dot(Normal);   // calculate how far the point on the line moves along the plane's normal direction

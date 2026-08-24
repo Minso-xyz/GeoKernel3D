@@ -2,6 +2,7 @@
 #include "Point3D.h"
 #include "Vector3D.h"
 
+// This class currently represents a finite line segment.
 class Line3D
 {
 public:
