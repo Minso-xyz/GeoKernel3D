@@ -48,6 +48,18 @@ public:
 	}
 
 public:
+	Vector3D UnitDirection()
+	{
+		return Direction().Unit();
+	}
+
+public:
+	Point3D Evaluate(double t)
+	{
+		return Start + Direction() * t;   // Linear Interpolation
+	}
+
+public:
 	Point3D ProjectionPoint(Point3D point)
 	{
 		Vector3D ab = Start.VectorTo(End);

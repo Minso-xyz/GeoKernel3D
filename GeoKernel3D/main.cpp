@@ -135,5 +135,16 @@ int main()
 	std::cout << BSplineCurve.EndParameter() << std::endl;
 	std::cout << std::to_string(BSplineCurve.IsValid()) << std::endl;
 
+	// Line3D
+	Line3D line2(Point3D(0,0,0), Point3D(10,10,10));
+	Vector3D direction = line2.Direction();
+	Point3D evaluate_0 = line2.Evaluate(0);
+	Point3D evaluate_025 = line2.Evaluate(0.25);
+
+	std::cout << "Direction = " << direction.X << ", " << direction.Y << ", " << direction.Z << std::endl;
+	std::cout << "Evaluate 0 = " << evaluate_0.X << ", " << evaluate_0.Y << ", " << evaluate_0.Z << std::endl;
+	std::cout << "Evaluate 0 = " << evaluate_025.X << ", " << evaluate_025.Y << ", " << evaluate_025.Z << std::endl;
+
+
 	return 0;
 }
