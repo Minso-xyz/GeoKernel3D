@@ -74,5 +74,11 @@
     <ClInclude Include="NURBSCurve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Shell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Solid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

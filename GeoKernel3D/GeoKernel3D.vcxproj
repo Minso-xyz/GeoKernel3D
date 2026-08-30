@@ -145,6 +145,8 @@
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Point3D.h" />
     <ClInclude Include="Ray.h" />
+    <ClInclude Include="Shell.h" />
+    <ClInclude Include="Solid.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vertex.h" />
