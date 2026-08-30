@@ -71,5 +71,8 @@
     <ClInclude Include="BRep.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NURBSCurve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

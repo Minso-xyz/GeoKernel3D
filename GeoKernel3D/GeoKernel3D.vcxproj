@@ -141,6 +141,7 @@
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="NURBSCurve.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Point3D.h" />
     <ClInclude Include="Ray.h" />
