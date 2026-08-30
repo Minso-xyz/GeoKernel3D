@@ -1,13 +1,15 @@
 # GeoKernel3D 👾
  
-GeoKernel3D is a personal C++ experiment exploring the foundations of:
+GeoKernel3D is a personal C++ experiment exploring the foundation of:
  
 - 3D Computational Geometry
 - Graphics Mathematics
 - CAD Kernel Concepts
- 
+- B-Rep data structures
+- STEP-Based CAD Representations
 
-The purpose of this project is to experiment with geometric algorithms, mathematical structures, and CAD-related concepts while building everything from scratch.
+
+The goal is to build geometry and topology structures from scratch while gradually working toward STEP file understanding and CAD data processing.
  
 ## Current Features
 ### Vector3D
@@ -23,6 +25,7 @@ The purpose of this project is to experiment with geometric algorithms, mathemat
 - DistanceTo
 - Translate
 - Point + Vector
+- Point - Vector
  
 ### Line3D
 - Length
@@ -30,31 +33,61 @@ The purpose of this project is to experiment with geometric algorithms, mathemat
 - MidPoint
 - Reverse
 - Point Projection (WIP)
+
+### Curves
 - Bezier Curve
+  - Linear
+  - Quadratic
+  - Cubic
+  - Quartic
+    
 - B-Spline
+  - Control Points
+  - Knot Vector
+  - Degree
+  - Parameter Range
 
-### Matrix 4x4
-- Translation
-- Rotation
-- Scale
-- Mirror
-- Transform
-
-### Viewer
-- Bounding Box
-
- 
-## Future Experiments
+### Surfaces & Plane
 - Plane
-- Intersections
-- Ray
+  - DistanceTo
+  - ProjectPoint
+  - Contains
+  - Plane Equation
+  - Line-Plane Intersection (WIP)
+
+### Mesh & Topology
+- Triangle
+  - Area
+  - Normal
+    
 - Mesh
-- B-Rep Concepts
-- NURBS
-- Convex Hull
-- DXF Parsing
-- DXF Writer
- 
+  - Area
+  - BoundingBox
+
+- B-Rep
+  - Vertex
+  - Edge
+  - Face
+  - Entity Count
+
+### Transformations
+- Matrix4x4
+  - Translation
+  - Rotation
+  - Scale
+  - Mirror
+  - Transform
+
+## Future Experiments
+- NURBS Curves
+- Ray
+- Additional Intersection Algorithms
+- STEP File Parsing
+- STEP Entity Mapping
+- B-Rep Relationships
+- Surface Representation
+- OPENGL Viewer
+
 ## Notes
 This is an experimental project.
 
