@@ -115,7 +115,7 @@ int main()
 	//spline.controlPoints.push_back(Point3D(20, 10, 0));
 	//spline.controlPoints.push_back(Point3D(30, 5, 0));
 
-	BSplineCurve BSplineCurve(
+	BSplineCurve BSplineCurve1(
 		{
 		Point3D(0,0,0),
 		Point3D(10,0,0),
@@ -129,11 +129,11 @@ int main()
 		3,3,3
 		}, 3);
 
-	std::cout << BSplineCurve.ControlPointCount() << std::endl;
-	std::cout << BSplineCurve.KnotCount() << std::endl;
-	std::cout << BSplineCurve.StartParameter() << std::endl;
-	std::cout << BSplineCurve.EndParameter() << std::endl;
-	std::cout << std::to_string(BSplineCurve.IsValid()) << std::endl;
+	std::cout << BSplineCurve1.ControlPointCount() << std::endl;
+	std::cout << BSplineCurve1.KnotCount() << std::endl;
+	std::cout << BSplineCurve1.StartParameter() << std::endl;
+	std::cout << BSplineCurve1.EndParameter() << std::endl;
+	std::cout << std::to_string(BSplineCurve1.IsValid()) << std::endl;
 
 	// Line3D
 	Line3D line2(Point3D(0,0,0), Point3D(10,10,10));
@@ -145,6 +145,34 @@ int main()
 	std::cout << "Evaluate 0 = " << evaluate_0.X << ", " << evaluate_0.Y << ", " << evaluate_0.Z << std::endl;
 	std::cout << "Evaluate 0 = " << evaluate_025.X << ", " << evaluate_025.Y << ", " << evaluate_025.Z << std::endl;
 
+	// B-Spline
+	BSplineCurve BSplineTest(
+		{
+			Point3D(0,0,0),
+			Point3D(10,0,0),
+			Point3D(20,0,0),
+			Point3D(30,0,0)
+		},
+		{
+			0,
+			1,
+			2,
+			3,
+			4
+		},
+		0);
+
+	std::cout << "B-Spline Basis Function Test" << std::endl;
+	// Degree = 0, Only the control point 0 has the influence.
+	std::cout << BSplineTest.BasisFunction(0, 0, 0.5) << std::endl;
+	std::cout << BSplineTest.BasisFunction(1, 0, 0.5) << std::endl;
+
+	// Test the acture B-spline curve
+	std::cout << "Test the acture B-spline curve" << std::endl;
+	for (double t = 0;t <= 3;t += 0.1)
+	{
+		std::cout << BSplineTest.BasisFunction(0,2,t)<< std::endl;
+	}
 
 	return 0;
 }
