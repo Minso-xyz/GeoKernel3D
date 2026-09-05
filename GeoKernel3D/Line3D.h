@@ -10,6 +10,13 @@ public:
 	Point3D End;
 
 public:
+	Line3D()
+	{
+		Start = Point3D(0, 0, 0);
+		End = Point3D(0, 0, 0);
+	}
+
+public:
 	Line3D(Point3D p1, Point3D p2)
 	{
 		Start = p1;
