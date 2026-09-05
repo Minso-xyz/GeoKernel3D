@@ -69,7 +69,7 @@ public:
 	}
 
 public:
-	Vector3D Cross(Vector3D other)
+	Vector3D Cross(const Vector3D& other) const
 	{
 		double x = (Y * other.Z) - (Z * other.Y);
 		double y = (Z * other.X) - (X * other.Z);
@@ -97,7 +97,7 @@ public:
 	}
 
 public:
-	Vector3D operator * (double factor)
+	Vector3D operator * (const double& factor)
 	{
 		return Vector3D(
 			X * factor,
