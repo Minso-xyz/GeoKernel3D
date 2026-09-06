@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arc3D.cpp" />
     <ClCompile Include="BoundingBox.cpp" />
     <ClCompile Include="Circle3D.cpp" />
     <ClCompile Include="main.cpp">
@@ -138,6 +139,7 @@
     <ClCompile Include="Point3D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arc3D.h" />
     <ClInclude Include="Axis2Placement3D.h" />
     <ClInclude Include="BezierCurve.h" />
     <ClInclude Include="BoundingBox.h" />
