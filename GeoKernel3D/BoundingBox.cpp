@@ -1,7 +1,7 @@
 #include "BoundingBox.h"
 #include <vector>
 
-Point3D BoundingBox::GetCenter()
+Point3D BoundingBox::GetCenter() const
 {
 	double x = (Min.X + Max.X) * 0.5;
 	double y = (Min.Y + Max.Y) * 0.5;
@@ -51,7 +51,7 @@ bool BoundingBox::Intersects(BoundingBox other)
 	return x && y && z;
 }
 
-BoundingBox BoundingBox::CalculateBoundingBox(std::vector<Point3D>& points)
+BoundingBox BoundingBox::CalculateBoundingBox(const std::vector<Point3D>& points)
 {
 	double minX = points[0].X;
 	double minY = points[0].Y;

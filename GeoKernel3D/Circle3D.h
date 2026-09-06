@@ -19,7 +19,7 @@ public:
 	}
 
 public:
-	Point3D Evaluate(double& angle) const;
+	Point3D Evaluate(double angle) const;
 	std::vector<Point3D> CreatePolyline(int& segmentCount) const;
 	Vector3D GetYDirection();
 

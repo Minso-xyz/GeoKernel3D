@@ -1,6 +1,7 @@
 #pragma once
 #include "Point3D.h"
 #include "MathUtil.h"
+#include <vector>
 
 class BoundingBox
 {
@@ -26,8 +27,8 @@ public:
 	}
 
 public:
-	Point3D GetCenter();
-	static BoundingBox CalculateBoundingBox(std::vector<Point3D>& points);
+	Point3D GetCenter() const;
+	static BoundingBox CalculateBoundingBox(const std::vector<Point3D>& points);
 	double GetModelRadius() const;
 	double Width();
 	double Height();

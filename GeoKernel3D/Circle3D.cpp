@@ -3,7 +3,7 @@
 #include "Circle3D.h"
 
 
-Point3D Circle3D::Evaluate(double& angle) const   // returns the point of the circle at the given angle
+Point3D Circle3D::Evaluate(double angle) const   // returns the point of the circle at the given angle
 {
 	Point3D center = Position.Origin;
 	Vector3D xAxis = Position.RefDirection;
