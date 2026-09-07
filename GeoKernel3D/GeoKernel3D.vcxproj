@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Arc3D.cpp" />
     <ClCompile Include="BoundingBox.cpp" />
+    <ClCompile Include="BSplineCurve.cpp" />
     <ClCompile Include="Circle3D.cpp" />
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>

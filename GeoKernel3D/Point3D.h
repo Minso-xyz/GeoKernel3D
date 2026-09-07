@@ -68,7 +68,7 @@ public:
 	}
 
 public:
-	Point3D operator *(double factor)
+	Point3D operator *(double factor) const
 	{
 		return Point3D(
 			X * factor,
