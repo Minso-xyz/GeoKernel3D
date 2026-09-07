@@ -1,5 +1,6 @@
 #include "BoundingBox.h"
 #include <vector>
+#include "Edge.h"
 
 Point3D BoundingBox::GetCenter() const
 {
@@ -88,3 +89,16 @@ double BoundingBox::GetModelRadius() const
 
 	return diagonal * 0.5;
 }
+
+BoundingBox BoundingBox::CreateFromEdgePoints(const std::vector<Edge>& edges)
+{
+	// Get the points from the edges
+	std::vector<Point3D> modelPoints;
+	for (const Edge& edge : edges)
+	{
+		modelPoints.push_back(edge.Start.Position);
+		modelPoints.push_back(edge.End.Position);
+	}
+	return CalculateBoundingBox(modelPoints);
+}
+

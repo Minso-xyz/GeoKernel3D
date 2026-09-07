@@ -2,6 +2,7 @@
 #include "Point3D.h"
 #include "MathUtil.h"
 #include <vector>
+#include "Edge.h"
 
 class BoundingBox
 {
@@ -35,4 +36,5 @@ public:
 	double Depth();
 	bool Contains(Point3D point);
 	bool Intersects(BoundingBox other);
+	static BoundingBox CreateFromEdgePoints(const std::vector<Edge>& edges);
 };
