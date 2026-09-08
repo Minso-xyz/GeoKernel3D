@@ -12,7 +12,7 @@ double BSplineCurve::BasisFunction(int i, int degree, double t) const
 {
 	if (degree == 0)
 	{
-		if (Knots[i] <= t && t < Knots[i + 1])
+		if ((Knots[i] <= t && t < Knots[i + 1]) || (t == Knots.back() && i == ControlPoints.size() - 1))
 		{
 			return 1.0;
 		}
@@ -58,7 +58,7 @@ std::vector<Point3D> BSplineCurve::CreatePolyline(int segmentCount) const
 	double start = Knots[Degree];
 	double end = Knots[Knots.size() - Degree - 1];
 
-	for (int i = 0; i <= segmentCount; i++)
+	for (int i = 0; i < segmentCount; i++)
 	{
 		double t = start + (end - start) * static_cast<double>(i) / static_cast<double>(segmentCount);
 		points.push_back(Evaluate(t));
