@@ -18,6 +18,21 @@ public:
 		Degree = degree;
 	}
 
+	BSplineCurve()
+	{
+		std::vector<Point3D> points;
+		points.push_back(Point3D(0, 0, 0));
+		points.push_back(Point3D(1, 1, 1));
+
+		std::vector<double> knots;
+		knots.push_back(0);
+		knots.push_back(1);
+
+		ControlPoints = points;
+		Knots = knots;
+		Degree = 1;
+	}
+
 public:
 	double BasisFunction(int i, int degree, double t) const;
 	Point3D Evaluate(double t) const;
