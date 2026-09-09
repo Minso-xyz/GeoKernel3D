@@ -146,6 +146,7 @@
     <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="BRep.h" />
     <ClInclude Include="BSplineCurve.h" />
+    <ClInclude Include="BSplineSurface.h" />
     <ClInclude Include="Circle3D.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Face.h" />

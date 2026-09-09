@@ -101,5 +101,8 @@
     <ClInclude Include="Arc3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BSplineSurface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
