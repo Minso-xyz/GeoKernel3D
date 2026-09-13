@@ -16,5 +16,6 @@ public:
 public:
 	Point3D Evaluate(double u, double v) const;
 	double BasisFunction(int i, int degree, double t, const std::vector<double>& knots) const;
-
+	std::vector<Point3D> CreateIsoCurveU(double u, int sampleCount) const;
+	std::vector<Point3D> CreateIsoCurveV(double v, int sampleCount) const;
 };
