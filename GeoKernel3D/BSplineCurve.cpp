@@ -46,9 +46,26 @@ Point3D BSplineCurve::Evaluate(double t) const
 	for (int i = 0; i < ControlPoints.size(); i++)
 	{
 		double weight = BasisFunction(i, Degree, t);
-		result = result + ControlPoints[i] * weight;
+		result = result + ControlPoints[i] * weight;  // Ni * Pi
 	}
 	return result;
+}
+
+Point3D BSplineCurve::EvaluateNURBS(double t) const
+{
+	Point3D numerator(0, 0, 0);
+	double denominator = 0.0;
+
+	for (int i = 0; i < ControlPoints.size(); i++)
+	{
+		double basis = BasisFunction(i, Degree, t);
+		double weight = Weights[i];
+
+		numerator = numerator + ControlPoints[i] * basis * weight;   // Ni * Wi * Pi
+		denominator = denominator + basis + weight;  // Ni * Wi
+
+		return numerator / denominator;   // Ni * Wi * Pi / Ni * Wi
+	}
 }
 
 std::vector<Point3D> BSplineCurve::CreatePolyline(int segmentCount) const

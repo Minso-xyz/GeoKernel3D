@@ -6,10 +6,9 @@ class BSplineCurve
 {
 public:
 	std::vector<Point3D> ControlPoints;
-
 	std::vector<double> Knots;
-
 	int Degree;
+	std::vector<double> Weights;
 
 	BSplineCurve(std::vector<Point3D> controlPoints, std::vector<double> knots, int degree)
 	{
@@ -37,6 +36,7 @@ public:
 	double BasisFunction(int i, int degree, double t) const;
 	Point3D Evaluate(double t) const;
 	std::vector<Point3D> CreatePolyline(int segmentCount) const;
+	Point3D EvaluateNURBS(double t) const;
 
 
 public:
