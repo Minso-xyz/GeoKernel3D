@@ -3,11 +3,14 @@
 #include <vector>
 #include "Triangle.h"
 #include "BoundingBox.h"
+#include "Face.h"
 
 class Mesh
 {
 public:
 
+	std::vector<Vertex> Vertices;
+	std::vector<Face> Faces;
 	std::vector<Triangle> triangles;
 
 public:

@@ -2,8 +2,9 @@
 #include "Edge.h"
 #include <vector>
 
-class Face
+struct Face
 {
-public:
-	std::vector<Edge> Edges;
+	int V0;
+	int V1;
+	int V2;
 };
