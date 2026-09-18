@@ -11,16 +11,16 @@ public:
 
 	std::vector<Vertex> Vertices;
 	std::vector<Face> Faces;
-	std::vector<Triangle> triangles;
+	std::vector<Triangle> Triangles;
 
 public:
 	double Area()
 	{
 		double area = 0;
 
-		for (int i = 0; i < triangles.size(); i++)
+		for (int i = 0; i < Triangles.size(); i++)
 		{
-			area += triangles[i].Area();
+			area += Triangles[i].Area();
 		}
 
 		return area;
@@ -29,112 +29,112 @@ public:
 public:
 	BoundingBox GetBoundingBox()
 	{
-		Point3D min = triangles[0].A;
-		Point3D max = triangles[0].A;
+		Point3D min = Triangles[0].A;
+		Point3D max = Triangles[0].A;
 
-		if (triangles.empty())
+		if (Triangles.empty())
 		{
 			return BoundingBox();
 		}
 
-		for (int i = 0; i < triangles.size(); i++)
+		for (int i = 0; i < Triangles.size(); i++)
 		{
 			// Minimum point
 			// Point A
-			if (triangles[i].A.X < min.X)
+			if (Triangles[i].A.X < min.X)
 			{
-				min.X = triangles[i].A.X;
+				min.X = Triangles[i].A.X;
 			}
 
-			if (triangles[i].A.Y < min.Y)
+			if (Triangles[i].A.Y < min.Y)
 			{
-				min.Y = triangles[i].A.Y;
+				min.Y = Triangles[i].A.Y;
 			}
 
-			if (triangles[i].A.Z < min.Z)
+			if (Triangles[i].A.Z < min.Z)
 			{
-				min.Z = triangles[i].A.Z;
+				min.Z = Triangles[i].A.Z;
 			}
 
 			// Point B
-			if (triangles[i].B.X < min.X)
+			if (Triangles[i].B.X < min.X)
 			{
-				min.X = triangles[i].B.X;
+				min.X = Triangles[i].B.X;
 			}
 
-			if (triangles[i].B.Y < min.Y)
+			if (Triangles[i].B.Y < min.Y)
 			{
-				min.Y = triangles[i].B.Y;
+				min.Y = Triangles[i].B.Y;
 			}
 
-			if (triangles[i].B.Z < min.Z)
+			if (Triangles[i].B.Z < min.Z)
 			{
-				min.Z = triangles[i].B.Z;
+				min.Z = Triangles[i].B.Z;
 			}
 
 			// Point C
-			if (triangles[i].C.X < min.X)
+			if (Triangles[i].C.X < min.X)
 			{
-				min.X = triangles[i].C.X;
+				min.X = Triangles[i].C.X;
 			}
 
-			if (triangles[i].C.Y < min.Y)
+			if (Triangles[i].C.Y < min.Y)
 			{
-				min.Y = triangles[i].C.Y;
+				min.Y = Triangles[i].C.Y;
 			}
 
-			if (triangles[i].C.Z < min.Z)
+			if (Triangles[i].C.Z < min.Z)
 			{
-				min.Z = triangles[i].C.Z;
+				min.Z = Triangles[i].C.Z;
 			}
 
 			// Maximum point
 			// Point A
-			if (triangles[i].A.X >= max.X)
+			if (Triangles[i].A.X >= max.X)
 			{
-				max.X = triangles[i].A.X;
+				max.X = Triangles[i].A.X;
 			}
 
-			if (triangles[i].A.Y >= max.Y)
+			if (Triangles[i].A.Y >= max.Y)
 			{
-				max.Y = triangles[i].A.Y;
+				max.Y = Triangles[i].A.Y;
 			}
 
-			if (triangles[i].A.Z >= max.Z)
+			if (Triangles[i].A.Z >= max.Z)
 			{
-				max.Z = triangles[i].A.Z;
+				max.Z = Triangles[i].A.Z;
 			}
 
 			// Point B
-			if (triangles[i].B.X >= max.X)
+			if (Triangles[i].B.X >= max.X)
 			{
-				max.X = triangles[i].B.X;
+				max.X = Triangles[i].B.X;
 			}
 
-			if (triangles[i].B.Y >= max.Y)
+			if (Triangles[i].B.Y >= max.Y)
 			{
-				max.Y = triangles[i].B.Y;
+				max.Y = Triangles[i].B.Y;
 			}
 
-			if (triangles[i].B.Z >= max.Z)
+			if (Triangles[i].B.Z >= max.Z)
 			{
-				max.Z = triangles[i].B.Z;
+				max.Z = Triangles[i].B.Z;
 			}
 
 			// Point C
-			if (triangles[i].C.X >= max.X)
+			if (Triangles[i].C.X >= max.X)
 			{
-				max.X = triangles[i].C.X;
+				max.X = Triangles[i].C.X;
 			}
 
-			if (triangles[i].C.Y >= max.Y)
+			if (Triangles[i].C.Y >= max.Y)
 			{
-				max.Y = triangles[i].C.Y;
+				max.Y = Triangles[i].C.Y;
 			}
 
-			if (triangles[i].C.Z >= max.Z)
+			if (Triangles[i].C.Z >= max.Z)
 			{
-				max.Z = triangles[i].C.Z;
+				max.Z = Triangles[i].C.Z;
 			}
 		}
 		return BoundingBox(min, max);
