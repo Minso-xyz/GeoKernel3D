@@ -2,6 +2,7 @@
 #include "Point3D.h"
 #include "Vector3D.h"
 #include <cmath>
+#include "Line3D.h"
 
 class Triangle
 {
@@ -35,5 +36,11 @@ public:
 		Vector3D crossProduct = ab.Cross(ac);
 
 		return crossProduct.Unit();;  // Normalize
+	}
+
+public:
+	Point3D GetCenter()
+	{
+		return Point3D((A.X + B.X + C.X) / 3, (A.Y + B.Y + C.Y) / 3, (A.Z + B.Z + C.Z) / 3);
 	}
 };
