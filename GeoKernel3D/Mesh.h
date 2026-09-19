@@ -27,6 +27,33 @@ public:
 	}
 
 public:
+	void CalculateVertexNormals()
+	{
+		std::vector<Vertex> vertices;
+
+		// Reset all the vertex normal (to accumulate the normals around the faces)
+		for (auto& vertex : Vertices)
+		{
+			vertex.Normal = Vector3D(0, 0, 0);
+		}
+
+		for (int i = 0; i < Faces.size(); i++)
+		{
+			Vector3D normal = Triangles[i].Normal();  // Face normal
+
+			// Add all the vertex normals onto the face normal
+			Vertices[Faces[i].V0].Normal += normal;
+			Vertices[Faces[i].V1].Normal += normal;
+			Vertices[Faces[i].V2].Normal += normal;
+		}
+
+		for (auto& vertex : Vertices)
+		{
+			vertex.Normal.Normalize();
+		}
+	}
+
+public:
 	BoundingBox GetBoundingBox()
 	{
 		Point3D min = Triangles[0].A;

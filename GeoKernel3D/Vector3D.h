@@ -97,7 +97,7 @@ public:
 	}
 
 public:
-	Vector3D operator * (const double& factor)
+	Vector3D operator * (const double& factor) const
 	{
 		return Vector3D(
 			X * factor,
@@ -106,19 +106,27 @@ public:
 		);
 	}
 
-	public:
-		Vector3D operator / (double factor)
+public:
+	Vector3D operator / (double factor)
+	{
+		if (factor == 0)
 		{
-			if (factor == 0)
-			{
-				return Vector3D();   // return (0,0,0)
-			}
-			return Vector3D(
-				X / factor,
-				Y / factor,
-				Z / factor
-			);
+			return Vector3D();   // return (0,0,0)
 		}
+		return Vector3D(
+			X / factor,
+			Y / factor,
+			Z / factor
+		);
+	}
 
-
+public:
+	Vector3D operator += (Vector3D other)
+	{
+		return Vector3D(
+			X += other.X,
+			Y += other.Y,
+			Z += other.Z
+		);
+	}
 };

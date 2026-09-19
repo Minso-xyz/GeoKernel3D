@@ -106,4 +106,14 @@ public:
 			Z - v.Z
 		);
 	}
+
+public:
+	Point3D operator + (Vector3D v) const
+	{
+		return Point3D(
+			X + v.X,
+			Y + v.Y,
+			Z + v.Z
+		);
+	}
 };

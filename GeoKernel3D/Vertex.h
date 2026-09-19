@@ -5,6 +5,7 @@ class Vertex
 {
 public:
 	Point3D Position;
+	Vector3D Normal;
 
 public:
 	Vertex() 
