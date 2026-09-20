@@ -157,6 +157,7 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="NURBSCurve.h" />
     <ClInclude Include="Plane.h" />
+    <ClInclude Include="Point2D.h" />
     <ClInclude Include="Point3D.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="Shell.h" />
