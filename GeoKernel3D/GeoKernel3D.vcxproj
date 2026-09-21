@@ -163,6 +163,7 @@
     <ClInclude Include="Shell.h" />
     <ClInclude Include="Solid.h" />
     <ClInclude Include="Triangle.h" />
+    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>

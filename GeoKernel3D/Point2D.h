@@ -19,4 +19,10 @@ public:
 		X = x;
 		Y = y;
 	}
+
+public:
+	Vector2D VectorTo(const Point2D& other) const
+	{
+		return Vector2D(other.X - X, other.Y - Y);
+	}
 };
