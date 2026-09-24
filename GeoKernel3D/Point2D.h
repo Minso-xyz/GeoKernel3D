@@ -27,4 +27,28 @@ public:
 	{
 		return Vector2D(other.X - X, other.Y - Y);
 	}
+
+public:
+	Point2D operator * (const double& factor) const
+	{
+		return Point2D(X * factor, Y * factor);
+	}
+
+public:
+	Point2D operator + (const Point2D& other) const
+	{
+		return Point2D(X + other.X, Y + other.Y);
+	}
+
+public:
+	Point2D operator - (const Point2D& other) const
+	{
+		return Point2D(X - other.X, Y - other.Y);
+	}
+
+public:
+	Point2D operator + (const Vector2D& v) const
+	{
+		return Point2D(X + v.X, Y + v.Y);
+	}
 };

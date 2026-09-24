@@ -18,4 +18,10 @@ public:
 	{
 		return (X * other.Y) - (Y * other.X);
 	}
+
+public:
+	Vector2D operator * (double& factor) const
+	{
+		return Vector2D(X * factor, Y * factor);
+	}
 };
