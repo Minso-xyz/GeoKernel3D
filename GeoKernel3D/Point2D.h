@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vector2D.h"
+#include "MathUtil.h"
 
 class Point2D
 {
@@ -26,6 +27,12 @@ public:
 	Vector2D VectorTo(const Point2D& other) const
 	{
 		return Vector2D(other.X - X, other.Y - Y);
+	}
+
+public:
+	bool IsEqual(const Point2D& other, double epsilon) const
+	{
+		return std::abs(X - other.X) < epsilon && std::abs(Y - other.Y) < epsilon;
 	}
 
 public:
