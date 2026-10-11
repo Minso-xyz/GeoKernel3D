@@ -66,11 +66,11 @@ public:
 		return Vector2D(X, Y);
 	}
 public:
-	Vector2D Normal(Vector2D direction)
+	Vector2D Normal()
 	{
 		// X' = cosX - sinY = -Y
 		// Y' = sinX + cosY = X
-		return Vector2D(-direction.Y, direction.X);
+		return Vector2D(-Y, X);
 	}
 
 public:
