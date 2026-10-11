@@ -65,8 +65,9 @@ public:
 
 		return Vector2D(X, Y);
 	}
+
 public:
-	Vector2D Normal()
+	Vector2D Normal() const
 	{
 		// X' = cosX - sinY = -Y
 		// Y' = sinX + cosY = X
