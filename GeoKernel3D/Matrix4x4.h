@@ -1,6 +1,7 @@
 #pragma once
 #include "Point3D.h"
 #include <cmath>
+#include "Line3D.h"
 
 class Matrix4x4
 {
