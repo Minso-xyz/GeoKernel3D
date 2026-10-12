@@ -26,7 +26,7 @@ public:
 	}
 
 public:
-	double Length()
+	double Length() const
 	{
 		return sqrt(X * X + Y * Y + Z * Z);
 	}
@@ -49,17 +49,20 @@ public:
 	}
 
 public:
-	Vector3D Normalize()
+	Vector3D Normalize() const
 	{
-		double x = Unit().X;
-		double y = Unit().Y;
-		double z = Unit().Z;
+		double length = Length();
 
-		X = x;
-		Y = y;
-		Z = z;
+		if (length == 0)
+		{
+			return Vector3D();
+		}
 
-		return Vector3D(X, Y, Z);
+		double x = X / length;
+		double y = Y / length;
+		double z = Z / length;
+
+		return Vector3D(x, y, z);
 	}
 
 public:

@@ -33,13 +33,13 @@ public:
 	}
 
 public:
-	double Length()
+	double Length() const
 	{
 		return sqrt(X * X + Y * Y);
 	}
 
 public:
-	Vector2D Unit()
+	Vector2D Normalize() const
 	{
 		double length = Length();
 
@@ -48,22 +48,10 @@ public:
 			return Vector2D();
 		}
 
-		double x = X / length;
-		double y = Y / length;
-
-		return Vector2D(x, y);
-	}
-
-public:
-	Vector2D Normalize()
-	{
-		double x = Unit().X;
-		double y = Unit().Y;
-
-		X = x;
-		Y = y;
-
-		return Vector2D(X, Y);
+		return Vector2D(
+			X / length,
+			Y / length
+		);
 	}
 
 public:
